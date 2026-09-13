@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Study Mate</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+  <!-- ==============================
+     PART 76 — STUDYMATE APP ICON
+     ============================== -->
+
+<link rel="icon" type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/2995/2995327.png">
+
+<meta name="theme-color" content="#6c4ab6">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-title"
+      content="StudyMate">
+
+<body>
+  <!-- ==============================
+     STUDYMATE SPLASH SCREEN
+     ============================== -->
+
+<div id="splashScreen">
+
+    <div class="splash-logo">📚</div>
+
+    <h2>StudyMate</h2>
+
+    <p>Your study space ✨</p>
+
+</div>
+  <div class="app-header">
+    <span class="app-logo">📚</span>
+    <div>
+        <h2>StudyMate</h2>
+        <p>Your study space ✨</p>
+    </div>
+  </div>
+
+    <h1>My First Application</h1>
+  <div class="welcome-card">
+
+    <h2>👋 Welcome to StudyMate!</h2>
+
+    <p>Stay focused. Study smarter. 💜</p>
+
+  </div>
+<div class="focus-card">
+
+    <h2>🎯 Today's Focus</h2>
+
+    <p>Choose a subject and start studying!</p>
+
+    <button onclick="startStudying()">
+        📚 Start Studying
+    </button>
+
+</div>
+  <div class="stats-card">
+
+    <h2>📊 Quick Stats</h2>
+
+    <div class="stats">
+
+        <div class="stat">
+            <span>📚</span>
+            <strong id="statSubjects">0%</strong>
+            <p>Subjects</p>
+        </div>
+
+        <div class="stat">
+            <span>⏱️</span>
+            <strong id="statStudy">0</strong>
+            <p>Minutes</p>
+        </div>
+
+        <div class="stat">
+            <span>📝</span>
+            <strong id="statTasks">0</strong>
+            <p>Tasks</p>
+        </div>
+
+    </div>
+
+  </div>
+    <p id="message">Ready to study</p>
+
+    <button onclick="startStudying()">Start studying</button>
+
+
+    <div class="subject" onclick="completeSubject(this); chooseSubject('Mathematics')">
+        📐 Mathematics
+    </div>
+
+    <div class="subject" onclick="completeSubject(this); chooseSubject('Biology')">
+        🧬 Biology
+    </div>
+
+    <div class="subject" onclick="completeSubject(this); chooseSubject('Chemistry')">
+        🧪 Chemistry
+    </div>
+
+    <div class="subject" onclick="completeSubject(this); chooseSubject('Physics')">
+        ⚡ Physics
+    </div>
+
+    <div class="subject" onclick="completeSubject(this); chooseSubject('English')">
+        📖 English
+    </div>
+
+
+    <p id="selectedSubject"></p>
+
+    <p id="progress">Progress = 0%</p>
+
+<div class="progress-container">
+    <div id="progressBar"></div>
+</div>
+  <h2>🎯 Daily Study Goal</h2>
+
+<div class="study-goal">
+
+    <p>Goal: 2 hours</p>
+
+    <p id="studyTime">Studied: 0 minutes</p>
+<div class="goal-bar-container">
+    <div id="goalBar"></div>
+</div>
+    <button onclick="addStudyTime()">
+    +30 Minutes
+</button>
+
+<button onclick="removeStudyTime()">
+    −30 Minutes
+</button>
+
+</div>
+<h2>Study Timer</h2>
+
+<div class="timer">
+
+    <div class="timer-options">
+
+        <button onclick="setTimer(25)">25 min</button>
+
+        <button onclick="setTimer(15)">15 min</button>
+
+        <button onclick="setTimer(5)">5 min</button>
+
+    </div>
+
+    <div id="timerDisplay">25:00</div>
+
+    <button onclick="startTimer()">Start</button>
+
+    <button onclick="pauseTimer()">Pause</button>
+
+    <button onclick="resetTimer()">Reset</button>
+
+</div>
+</div>
+<h2>✅ My Tasks</h2>
+
+<div class="task-box">
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter a task..."
+    >
+
+    <button onclick="addTask()">
+        Add Task
+    </button>
+
+</div>
+
+<div id="taskList"></div>
+  <h2>📝 My Notes</h2>
+
+<div class="notes-box">
+
+    <textarea
+        id="notesInput"
+        placeholder="Write your study notes here..."
+    ></textarea>
+
+    <button onclick="saveNotes()">
+        💾 Save Notes
+    </button>
+
+    <p id="notesMessage"></p>
+
+</div>
+  <div class="stat">
+    <span>🔥</span>
+    <strong id="statStreak">1</strong>
+    <p>Day Streak</p>
+  </div>
+  <button onclick="clearTasks()">
+    🗑️ Clear All Tasks
+  </button>
+  <div class="motivation-card">
+
+    <h2>💜 Need Motivation?</h2>
+
+    <p id="motivationText">
+        You can do this! 📚✨
+    </p>
+
+    <button onclick="newMotivation()">
+        ✨ Give Me Motivation
+    </button>
+
+  </div>
+  <div class="quote-card">
+
+    <h2>📖 Study Quote</h2>
+
+    <p id="studyQuote">
+        "Keep learning, keep growing. 🌱"
+    </p>
+
+  </div>
+  <button onclick="clearNotes()">
+    🗑️ Clear Notes
+  </button>
+  <button onclick="startStudySession()">
+    🚀 Start 25-Min Study Session
+  </button>
+  <button onclick="toggleDarkMode()" id="darkModeButton">
+    🌙 Dark Mode
+  </button>
+
+</body>
+
+</html>
+<!-- ==============================
+     TODAY'S PLAN
+     ============================== -->
+
+<div class="plan-card">
+
+    <h2>📅 Today's Plan</h2>
+
+    <div class="plan-item">
+        <span>🌅 Morning</span>
+        <strong>Maths</strong>
+    </div>
+
+    <div class="plan-item">
+        <span>☀️ Afternoon</span>
+        <strong>Science</strong>
+    </div>
+
+    <div class="plan-item">
+        <span>🌙 Evening</span>
+        <strong>Computer Science</strong>
+    </div>
+
+</div>
+<!-- ==============================
+     ADD STUDY PLAN
+     ============================== -->
+
+<div class="plan-add-card">
+
+    <h2>➕ Add to Today's Plan</h2>
+
+    <input
+        type="text"
+        id="planInput"
+        placeholder="What do you want to study?"
+    >
+
+    <button onclick="addPlanItem()">
+        Add Plan
+    </button>
+
+    <div id="planList"></div>
+
+</div>
+<!-- ==============================
+     STREAK CARD
+     ============================== -->
+
+<div class="streak-card">
+
+    <h2>🔥 Study Streak</h2>
+
+    <p id="streakMessage">
+        Keep going! Build your streak every day. 💪
+    </p>
+
+</div>
+<!-- ==============================
+     COMPLETED TASKS
+     ============================== -->
+
+<div class="completed-card">
+
+    <h2>✅ Task Progress</h2>
+
+    <p id="taskProgress">
+        0 of 0 completed
+    </p>
+
+</div>
+<!-- ==============================
+     EXAM COUNTDOWN
+     ============================== -->
+
+<div class="countdown-card">
+
+    <h2>⏳ Exam Countdown</h2>
+
+    <input type="date" id="examDate">
+
+    <button onclick="saveExamDate()">
+        💾 Save Exam Date
+    </button>
+
+    <h3 id="countdownText">
+        Choose your exam date 📅
+    </h3>
+
+</div>
+<!-- ==============================
+     ACHIEVEMENTS
+     ============================== -->
+
+<div class="achievements-card">
+
+    <h2>🏆 Achievements</h2>
+
+    <div class="badges">
+
+        <div class="badge" id="badgeFirst">
+            🌱
+            <span>First Step</span>
+        </div>
+
+        <div class="badge" id="badgeTasks">
+            ✅
+            <span>Task Master</span>
+        </div>
+
+        <div class="badge" id="badgeStudy">
+            📚
+            <span>Study Star</span>
+        </div>
+
+        <div class="badge" id="badgeStreak">
+            🔥
+            <span>7 Day Streak</span>
+        </div>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
