@@ -1,0 +1,810 @@
+body {
+    background-color: #f7f5ff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #6c4ab6;
+    text-align: center;
+    font-size: 36px;
+}
+
+h2 {
+    color: #333333;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+
+
+/* SUBJECT CARDS */
+
+.subject {
+    background-color: white;
+
+    padding: 18px;
+    margin: 12px 0;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+
+/* When you press a card */
+
+.subject:active {
+    transform: scale(0.96);
+}
+button {
+    background-color: #6c4ab6;
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 14px 24px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(108, 74, 182, 0.25);
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+    opacity: 0.85;
+}button {
+    background-color: #6c4ab6;
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 14px 24px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(108, 74, 182, 0.25);
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+    opacity: 0.85;
+}
+.timer {
+    background-color: white;
+    padding: 25px;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#timerDisplay {
+    font-size: 48px;
+    font-weight: bold;
+    color: #6c4ab6;
+    margin-bottom: 20px;
+}
+
+.timer button {
+    margin: 5px;
+}
+.subject.completed {
+    background-color: #e8f5e9;
+    border: 2px solid #81c784;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+.study-goal {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+.goal-bar-container {
+    width: 100%;
+    height: 15px;
+    background-color: #e3ddf5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#goalBar {
+    width: 0%;
+    height: 100%;
+    background-color: #6c4ab6;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+.task-box {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#taskInput {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.task {
+    background-color: white;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task button {
+    margin-left: 10px;
+}
+.completed-task {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.notes-box {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#notesInput {
+    width: 90%;
+    height: 150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: #18151f;
+    color: white;
+}
+
+body.dark-mode h1 {
+    color: #c9b6ff;
+}
+
+body.dark-mode h2 {
+    color: white;
+}
+
+body.dark-mode .subject,
+body.dark-mode .timer,
+body.dark-mode .study-goal,
+body.dark-mode .task-box,
+body.dark-mode .task,
+body.dark-mode .notes-box {
+    background-color: #25212f;
+    color: white;
+}
+
+body.dark-mode #timerDisplay {
+    color: #c9b6ff;
+}
+
+#darkModeButton {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#darkModeButton {
+    background-color: #6c4ab6;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+#darkModeButton:active {
+    transform: scale(0.95);
+}
+.welcome-card {
+    background-color: #6c4ab6;
+    color: white;
+    padding: 22px;
+    margin-top: 20px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-card h2 {
+    color: white;
+    margin-top: 0;
+}
+
+.welcome-card p {
+    margin-bottom: 0;
+}
+.focus-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.focus-card h2 {
+    color: #6c4ab6;
+    margin-top: 0;
+}
+
+.focus-card button {
+    background-color: #6c4ab6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.stats-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stats-card h2 {
+    color: #6c4ab6;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.stat {
+    flex: 1;
+    background-color: #f7f5ff;
+    padding: 15px 5px;
+    border-radius: 15px;
+}
+
+.stat span {
+    display: block;
+    font-size: 24px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 20px;
+    color: #6c4ab6;
+    margin-top: 5px;
+}
+
+.stat p {
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+.motivation-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.motivation-card h2 {
+    color: #6c4ab6;
+}
+
+#motivationText {
+    font-size: 18px;
+    font-weight: bold;
+}
+.quote-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.quote-card h2 {
+    color: #6c4ab6;
+}
+
+#studyQuote {
+    font-size: 17px;
+    font-style: italic;
+}
+/* Notes buttons */
+
+.notes-box button {
+    background-color: #6c4ab6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin-top: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.notes-box button:active {
+    transform: scale(0.95);
+}
+/* Mobile Friendly */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .stats {
+        gap: 6px;
+    }
+
+    .stat {
+        padding: 12px 4px;
+    }
+
+    .stat strong {
+        font-size: 17px;
+    }
+
+    .stat p {
+        font-size: 11px;
+    }
+
+    #timerDisplay {
+        font-size: 42px;
+    }
+
+    .subject {
+        padding: 15px;
+    }
+
+    #taskInput {
+        width: 85%;
+    }
+
+    #notesInput {
+        width: 85%;
+    }
+}
+/* ==============================
+   APP HEADER
+   ============================== */
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #6c4ab6;
+    color: white;
+    padding: 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.app-logo {
+    font-size: 38px;
+}
+
+.app-header h2 {
+    color: white;
+    margin: 0;
+}
+
+.app-header p {
+    margin: 3px 0 0;
+    font-size: 14px;
+}
+/* ==============================
+   TODAY'S PLAN
+   ============================== */
+
+.plan-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.plan-card h2 {
+    color: #6c4ab6;
+    margin-top: 0;
+}
+
+.plan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f5ff;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 14px;
+}
+
+.plan-item strong {
+    color: #6c4ab6;
+}
+/* ==============================
+   ADD STUDY PLAN
+   ============================== */
+
+.plan-add-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.plan-add-card h2 {
+    color: #6c4ab6;
+    margin-top: 0;
+}
+
+#planInput {
+    width: 85%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.plan-add-card button {
+    background-color: #6c4ab6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.plan-entry {
+    background-color: #f7f5ff;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 14px;
+}
+/* ==============================
+   STREAK CARD
+   ============================== */
+
+.streak-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.streak-card h2 {
+    color: #6c4ab6;
+}
+
+#streakMessage {
+    font-weight: bold;
+}
+/* ==============================
+   COMPLETED TASKS
+   ============================== */
+
+.completed-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.completed-card h2 {
+    color: #6c4ab6;
+}
+
+#taskProgress {
+    font-size: 20px;
+    font-weight: bold;
+}
+/* ==============================
+   ACHIEVEMENTS
+   ============================== */
+
+.achievements-card {
+    background-color: white;
+    padding: 22px;
+    margin-top: 18px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.achievements-card h2 {
+    color: #6c4ab6;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.badge {
+    width: 100px;
+    padding: 14px 8px;
+    background-color: #f7f5ff;
+    border-radius: 16px;
+    font-size: 28px;
+    opacity: 0.35;
+}
+
+.badge span {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.badge.unlocked {
+    opacity: 1;
+    border: 2px solid #6c4ab6;
+}
+/* ==============================
+   FINAL MOBILE APP POLISH
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 16px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.app-header {
+    position: relative;
+}
+
+.subject,
+.timer,
+.study-goal,
+.task-box,
+.notes-box,
+.stats-card,
+.motivation-card,
+.quote-card,
+.plan-card,
+.plan-add-card,
+.streak-card,
+.completed-card,
+.achievements-card {
+    overflow: hidden;
+}
+body.dark-mode .focus-card,
+body.dark-mode .stats-card,
+body.dark-mode .motivation-card,
+body.dark-mode .quote-card,
+body.dark-mode .plan-card,
+body.dark-mode .plan-add-card,
+body.dark-mode .streak-card,
+body.dark-mode .completed-card,
+body.dark-mode .achievements-card {
+    background-color: #25212f;
+    color: white;
+}
+
+body.dark-mode .plan-item,
+body.dark-mode .plan-entry,
+body.dark-mode .stat,
+body.dark-mode .badge {
+    background-color: #302b3d;
+    color: white;
+}
+
+body.dark-mode #motivationText,
+body.dark-mode #studyQuote,
+body.dark-mode #streakMessage,
+body.dark-mode #taskProgress {
+    color: white;
+}
+/* ==============================
+   PART 74 — BETTER TASK DESIGN
+   ============================== */
+
+#taskList {
+    margin-top: 12px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    background-color: #f7f5ff;
+    padding: 14px 16px;
+    margin-top: 10px;
+
+    border-radius: 16px;
+    border: 1px solid #e8e2ff;
+
+    transition: all 0.2s ease;
+}
+
+.task span {
+    flex: 1;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.task button {
+    background-color: transparent;
+    padding: 6px 8px;
+    font-size: 17px;
+}
+
+.task button:active {
+    transform: scale(0.9);
+}
+
+/* Completed task */
+
+.task.completed-task {
+    background-color: #eee9ff;
+    opacity: 0.75;
+}
+
+.task.completed-task span {
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+/* Task input area */
+
+.task-box {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.task-box input {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-box button {
+    white-space: nowrap;
+}
+
+/* Dark mode */
+
+body.dark-mode .task {
+    background-color: #302b3d;
+    border-color: #443b55;
+}
+
+body.dark-mode .task.completed-task {
+    background-color: #26222f;
+}
+/* ==============================
+   PART 75 — SPLASH SCREEN
+   ============================== */
+
+#splashScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #6c4ab6;
+    color: white;
+
+    transition: opacity 0.5s ease;
+}
+
+.splash-logo {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+#splashScreen h2 {
+    color: white;
+    font-size: 32px;
+    margin: 5px;
+}
+
+#splashScreen p {
+    margin-top: 5px;
+    font-size: 15px;
+}
